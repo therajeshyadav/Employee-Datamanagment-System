@@ -10,7 +10,7 @@ import { AuthContext } from "./context/Authprovider";
 const App = () => {
   const [user, setUser] = useState(null);
   const [loggedInUserData, setLoggedInUserData] = useState(null);
-  const authData = useContext(AuthContext);
+  const [authData, setAuthData] = useContext(AuthContext);
   useEffect(() => {
     const loggedInUser = localStorage.getItem("loggedInUser");
 
@@ -22,10 +22,6 @@ const App = () => {
   }, []);
 
   const handleLogin = (email, password) => {
-    // if (!authData || !authData.employees) {
-    //   alert("Data is not loaded yet. Try again.");
-    //   return;
-    // }
     if (email === "admin@me.com" && password === "123") {
       setUser("admin");
       localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin" }));
@@ -48,27 +44,6 @@ const App = () => {
       }
     }
   };
-  // const handleLogin = (email, password) => {
-  //   if (email === "admin@me.com" && password === "123") {
-  //     setUser("admin");
-  //     localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin" }));
-  //   } else if (authData) {
-  //     const employee = authData.employees.find(
-  //       (e) => e.email === email && e.password === password
-  //     );
-
-  //     if (employee) {
-  //       setUser("employee");
-  //       setLoggedInUserData(employee);
-  //       localStorage.setItem(
-  //         "loggedInUser",
-  //         JSON.stringify({ role: "employee" })
-  //       );
-  //     } else {
-  //       alert("Invalid Credentials");
-  //     }
-  //   }
-  // };
 
   return (
     <Routes>

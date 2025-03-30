@@ -2,7 +2,8 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/Authprovider";
 
 const CreateTask = () => {
-  const { userData, setuserData } = useContext(AuthContext);
+  const [userData, setUserData] = useContext(AuthContext);
+
   const [taskTitle, setTaskTitle] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
   const [taskdate, setTaskDate] = useState("");
@@ -13,7 +14,7 @@ const CreateTask = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-
+    console.log("Hello");
     const newTask = {
       taskTitle,
       taskDescription,
@@ -35,7 +36,15 @@ const CreateTask = () => {
       return employee;
     });
 
-    setuserData({ ...userData, employees: updatedEmployees });
+    // const data = JSON.parse(localStorage.getItem("employees"));
+    // data.forEach(function (e) {
+    //   console.log(e.firstName);
+    //   if (e.firstName === assignto) {
+    //     e.tasks.push(newTask);
+    //   }
+    // });
+
+    setUserData({ ...userData, employees: updatedEmployees });
     console.log(updatedEmployees);
     // Reset form fields
     setTaskDate("");

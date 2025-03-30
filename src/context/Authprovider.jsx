@@ -12,9 +12,10 @@ const Authprovider = ({ children }) => {
     }
     const storedData = getLocalStorage();
 
-    setUserData(storedData);
-  }, []);
+    console.log("Loaded userData from localStorage:", storedData); // 🛠 Debugging
 
+    setUserData(storedData || { employees: [], admin: [] }); // ✅ Default fallback
+  }, []);
   return (
     <div>
       <AuthContext.Provider value={[userData, setUserData]}>

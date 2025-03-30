@@ -4,12 +4,11 @@ import { useNavigate } from "react-router-dom";
 const Login = ({ handleLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
 
   const submitHandler = (e) => {
     e.preventDefault();
-    // console.log("Email:", email);
-    // console.log("Password:", password);
+
     handleLogin(email, password);
     setEmail("");
     setPassword("");
