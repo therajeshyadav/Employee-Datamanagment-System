@@ -20,7 +20,7 @@ const TaskList = ({ data }) => {
         if (e.completed) {
           return <CompleteTask key={idx} data={e} />;
         }
-        if (e.failure) {
+        if (e.failed) {
           return <FailedTask key={idx} data={e} />;
         }
       })}

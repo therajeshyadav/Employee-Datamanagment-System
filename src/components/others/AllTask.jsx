@@ -28,7 +28,6 @@ const AllTask = () => {
               <h5 className="text-lg font-medium w-1/5 text-yellow-400">
                 {tasks.filter((t) => t.active).length}
               </h5>
-              <h5 className="text-lg font-medium w-1/5 text-white-800">
                 {tasks.filter((t) => t.completed).length}
               </h5>
               <h5 className="text-lg font-medium w-1/5 text-red-600">

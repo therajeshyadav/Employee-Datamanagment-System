@@ -169,16 +169,24 @@ const NotificationCenter = () => {
                 }`}
               >
                 <div className="flex items-start space-x-4">
-                  <div className={`w-10 h-10 bg-${notification.color}-100 rounded-lg flex items-center justify-center flex-shrink-0`}>
-                    <Icon className={`w-5 h-5 text-${notification.color}-600`} />
+                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                    notification.color === 'green' ? 'bg-green-100' :
+                    notification.color === 'blue' ? 'bg-blue-100' :
+                    notification.color === 'purple' ? 'bg-purple-100' :
+                    notification.color === 'yellow' ? 'bg-yellow-100' : 'bg-gray-100'
+                  }`}>
+                    <Icon className={`w-5 h-5 ${
+                      notification.color === 'green' ? 'text-green-600' :
+                      notification.color === 'blue' ? 'text-blue-600' :
+                      notification.color === 'purple' ? 'text-purple-600' :
+                      notification.color === 'yellow' ? 'text-yellow-600' : 'text-gray-600'
+                    }`} />
                   </div>
                   
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between">
                       <div>
-                        <h3 className={`text-sm font-medium ${
-                          !notification.read ? 'text-gray-900' : 'text-gray-700'
-                        }`}>
+                        <h3 className="text-sm font-medium text-gray-900">
                           {notification.title}
                         </h3>
                         <p className="text-sm text-gray-600 mt-1">
