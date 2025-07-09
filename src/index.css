@@ -30,8 +30,9 @@ body {
 
 @layer components {
   .glass-effect {
-    @apply bg-white/10 backdrop-blur-md border border-white/20;
-  }
+  @apply bg-white bg-opacity-10 backdrop-blur-md border border-white/20;
+}
+
 
   .card-shadow {
     @apply shadow-xl shadow-black/10;
