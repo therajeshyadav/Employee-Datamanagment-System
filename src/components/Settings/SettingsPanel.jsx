@@ -129,18 +129,21 @@ const SettingsPanel = () => {
                 <div className="space-y-4">
                   <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
                     <div>
-                      <h4 className="font-medium text-gray-900">Two-Factor Authentication</h4>
+                      <h4 className="font-medium text-gray-900">Two Factor Authentication</h4>
                       <p className="text-sm text-gray-600">Add an extra layer of security</p>
                     </div>
-                    <label className="relative inline-flex items-center cursor-pointer">
+                    <div className="relative inline-flex items-center cursor-pointer">
                       <input
                         type="checkbox"
                         checked={settings.twoFactorAuth}
                         onChange={(e) => handleSettingChange('twoFactorAuth', e.target.checked)}
-                        className="sr-only peer"
+                        className="sr-only"
+                        id="twoFactorAuth"
                       />
-                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
-                    </label>
+                      <label htmlFor="twoFactorAuth" className="w-11 h-6 bg-gray-200 rounded-full relative cursor-pointer">
+                        <div className={`absolute top-0.5 left-0.5 bg-white border border-gray-300 rounded-full h-5 w-5 transition-transform ${settings.twoFactorAuth ? 'translate-x-5 bg-blue-600' : ''}`}></div>
+                      </label>
+                    </div>
                   </div>
 
                   <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
@@ -148,15 +151,18 @@ const SettingsPanel = () => {
                       <h4 className="font-medium text-gray-900">Biometric Authentication</h4>
                       <p className="text-sm text-gray-600">Enable fingerprint/face recognition</p>
                     </div>
-                    <label className="relative inline-flex items-center cursor-pointer">
+                    <div className="relative inline-flex items-center cursor-pointer">
                       <input
                         type="checkbox"
                         checked={settings.biometricAuth}
                         onChange={(e) => handleSettingChange('biometricAuth', e.target.checked)}
-                        className="sr-only peer"
+                        className="sr-only"
+                        id="biometricAuth"
                       />
-                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
-                    </label>
+                      <label htmlFor="biometricAuth" className="w-11 h-6 bg-gray-200 rounded-full relative cursor-pointer">
+                        <div className={`absolute top-0.5 left-0.5 bg-white border border-gray-300 rounded-full h-5 w-5 transition-transform ${settings.biometricAuth ? 'translate-x-5 bg-blue-600' : ''}`}></div>
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -172,15 +178,18 @@ const SettingsPanel = () => {
                       <h4 className="font-medium text-gray-900">Email Notifications</h4>
                       <p className="text-sm text-gray-600">Receive notifications via email</p>
                     </div>
-                    <label className="relative inline-flex items-center cursor-pointer">
+                    <div className="relative inline-flex items-center cursor-pointer">
                       <input
                         type="checkbox"
                         checked={settings.emailNotifications}
                         onChange={(e) => handleSettingChange('emailNotifications', e.target.checked)}
-                        className="sr-only peer"
+                        className="sr-only"
+                        id="emailNotifications"
                       />
-                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
-                    </label>
+                      <label htmlFor="emailNotifications" className="w-11 h-6 bg-gray-200 rounded-full relative cursor-pointer">
+                        <div className={`absolute top-0.5 left-0.5 bg-white border border-gray-300 rounded-full h-5 w-5 transition-transform ${settings.emailNotifications ? 'translate-x-5 bg-blue-600' : ''}`}></div>
+                      </label>
+                    </div>
                   </div>
 
                   <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
@@ -188,15 +197,18 @@ const SettingsPanel = () => {
                       <h4 className="font-medium text-gray-900">SMS Notifications</h4>
                       <p className="text-sm text-gray-600">Receive notifications via SMS</p>
                     </div>
-                    <label className="relative inline-flex items-center cursor-pointer">
+                    <div className="relative inline-flex items-center cursor-pointer">
                       <input
                         type="checkbox"
                         checked={settings.smsNotifications}
                         onChange={(e) => handleSettingChange('smsNotifications', e.target.checked)}
-                        className="sr-only peer"
+                        className="sr-only"
+                        id="smsNotifications"
                       />
-                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
-                    </label>
+                      <label htmlFor="smsNotifications" className="w-11 h-6 bg-gray-200 rounded-full relative cursor-pointer">
+                        <div className={`absolute top-0.5 left-0.5 bg-white border border-gray-300 rounded-full h-5 w-5 transition-transform ${settings.smsNotifications ? 'translate-x-5 bg-blue-600' : ''}`}></div>
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -227,15 +239,18 @@ const SettingsPanel = () => {
                       <h4 className="font-medium text-gray-900">Attendance Tracking</h4>
                       <p className="text-sm text-gray-600">Enable automatic attendance tracking</p>
                     </div>
-                    <label className="relative inline-flex items-center cursor-pointer">
+                    <div className="relative inline-flex items-center cursor-pointer">
                       <input
                         type="checkbox"
                         checked={settings.attendanceTracking}
                         onChange={(e) => handleSettingChange('attendanceTracking', e.target.checked)}
-                        className="sr-only peer"
+                        className="sr-only"
+                        id="attendanceTracking"
                       />
-                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
-                    </label>
+                      <label htmlFor="attendanceTracking" className="w-11 h-6 bg-gray-200 rounded-full relative cursor-pointer">
+                        <div className={`absolute top-0.5 left-0.5 bg-white border border-gray-300 rounded-full h-5 w-5 transition-transform ${settings.attendanceTracking ? 'translate-x-5 bg-blue-600' : ''}`}></div>
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
